@@ -22,13 +22,18 @@ public class ProductRepository {
     }
 
     public List<Product> findAll() {
-        // TODO 2: 执行 SELECT，并使用 PRODUCT_ROW_MAPPER 转换每一行。
-        return List.of();
+        // DONE 2: 执行 SELECT，并使用 PRODUCT_ROW_MAPPER 转换每一行。
+        return jdbcTemplate.query(
+                "SELECT id, name, price FROM products ORDER BY id",
+                PRODUCT_ROW_MAPPER
+        );
     }
 
     public int insert(Product product) {
-        // TODO 3: 使用三个 ? 参数新增商品，不要拼接 SQL 字符串。
-        return 0;
+        // DONE 3: 使用三个 ? 参数新增商品，不要拼接 SQL 字符串。
+        return jdbcTemplate.update("INSERT INTO products (id, name, price) VALUES (?, ?, ?)", product.id(),
+                product.name(),
+                product.price());
     }
 
     public int rename(String id, String name) {
