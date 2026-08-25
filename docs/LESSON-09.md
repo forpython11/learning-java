@@ -1,6 +1,6 @@
 # Lesson 09: 使用 record 构建不可变 DTO
 
-> 状态：进行中
+> 状态：已完成（2026-08-25）
 
 `record` 适合表达只保存数据的不可变对象。Java 会自动生成构造方法、字段访问方法、`equals`、`hashCode` 和 `toString`。
 

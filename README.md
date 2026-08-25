@@ -42,7 +42,8 @@ java -cp target/classes org.example.lesson07.Main
 | [Lesson 06](docs/LESSON-06.md) | 使用 Map 按 ID 存取数据 | 已完成 |
 | [Lesson 07](docs/LESSON-07.md) | 使用 Optional 处理查询结果 | 已完成 |
 | [Lesson 08](docs/LESSON-08.md) | 使用泛型封装 API 响应 | 已完成 |
-| [Lesson 09](docs/LESSON-09.md) | 使用 record 构建不可变 DTO | 进行中 |
+| [Lesson 09](docs/LESSON-09.md) | 使用 record 构建不可变 DTO | 已完成 |
+| [Lesson 10](docs/LESSON-10.md) | 使用 BigDecimal 计算金额 | 进行中 |
 
 ## 项目结构
 
@@ -56,7 +57,8 @@ learning-java/
 │   ├── lesson02/                 第二课
 │   ├── ...
 │   ├── lesson08/                 第八课
-│   └── lesson09/                 第九课
+│   ├── lesson09/                 第九课
+│   └── lesson10/                 第十课
 ├── src/test/java/                JUnit 测试代码
 └── pom.xml                       Maven 项目配置
 ```
@@ -75,6 +77,7 @@ learning-java/
 | `value \| undefined` | `Optional<T>` |
 | 泛型 `ApiResponse<T>` | 泛型 `ApiResponse<T>` |
 | `readonly` 数据对象 | `record` |
+| 金额字符串 + decimal 库 | `BigDecimal` |
 | Jest / Vitest | JUnit |
 | npm / package.json | Maven / pom.xml |
 
