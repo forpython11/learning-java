@@ -1,6 +1,6 @@
 # Lesson 22: Spring Data JPA
 
-> 状态：进行中
+> 状态：已完成（2026-08-25）
 
 上一课直接使用 `JdbcTemplate` 编写 SQL。本课改用 Spring Data JPA：通过 Entity 描述数据库表，通过 Repository 提供常用查询，并体验按照方法名生成查询。
 

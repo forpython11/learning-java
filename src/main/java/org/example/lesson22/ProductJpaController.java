@@ -21,14 +21,14 @@ public class ProductJpaController {
 
     @GetMapping
     public List<ProductEntity> findAll() {
-        // TODO 2: 使用 Sort.by("id") 查询并返回按 ID 排序的全部商品。
-        return List.of();
+        // DONE 2: 使用 Sort.by("id") 查询并返回按 ID 排序的全部商品。
+        return repository.findAll(Sort.by("id"));
     }
 
     @GetMapping("/search")
     public List<ProductEntity> search(@RequestParam String keyword) {
-        // TODO 3: 调用 Repository 中的派生查询方法。
-        return List.of();
+        // DONE 3: 调用 Repository 中的派生查询方法。
+        return repository.findByNameContainingIgnoreCaseOrderByIdAsc(keyword);
     }
 
     @GetMapping("/{id}")

@@ -55,7 +55,8 @@ java -cp target/classes org.example.lesson07.Main
 | [Lesson 19](docs/LESSON-19.md) | 全局异常处理 | 已完成 |
 | [Lesson 20](docs/LESSON-20.md) | 配置、Profile 与日志 | 已完成 |
 | [Lesson 21](docs/LESSON-21.md) | SQL 与 H2 入门 | 已完成 |
-| [Lesson 22](docs/LESSON-22.md) | Spring Data JPA | 进行中 |
+| [Lesson 22](docs/LESSON-22.md) | Spring Data JPA | 已完成 |
+| [Lesson 23](docs/LESSON-23.md) | Entity 与 DTO 转换 | 进行中 |
 
 ## 项目结构
 
@@ -82,7 +83,8 @@ learning-java/
 │   ├── lesson19/                 第十九课（全局异常处理）
 │   ├── lesson20/                 第二十课（配置、Profile 与日志）
 │   ├── lesson21/                 第二十一课（SQL 与 H2）
-│   └── lesson22/                 第二十二课（Spring Data JPA）
+│   ├── lesson22/                 第二十二课（Spring Data JPA）
+│   └── lesson23/                 第二十三课（Entity 与 DTO 转换）
 ├── src/main/resources/           Spring Boot 配置与数据库初始化脚本
 ├── src/test/java/                JUnit 测试代码
 └── pom.xml                       Maven 项目配置
@@ -115,6 +117,7 @@ learning-java/
 | `.env` / 构建环境变量 | Spring Profile 与配置文件 |
 | SQLite / SQL 客户端 | H2 / Spring `JdbcTemplate` |
 | ORM / 数据访问库 | Spring Data JPA / `JpaRepository` |
+| 数据库模型 / API 类型 | Entity / DTO `record` |
 | Jest / Vitest | JUnit |
 | npm / package.json | Maven / pom.xml |
 

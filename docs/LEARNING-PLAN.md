@@ -9,8 +9,8 @@
 ## 当前进度
 
 ```text
-已完成：Lesson 01 - Lesson 21
-进行中：Lesson 22
+已完成：Lesson 01 - Lesson 22
+进行中：Lesson 23
 总计划：32 课
 ```
 
@@ -70,8 +70,8 @@
 | 课程 | 主题 | 核心能力 | 状态 |
 | --- | --- | --- | --- |
 | 21 | SQL 与 H2 入门 | 表、主键、增删改查、初始化脚本 | 已完成 |
-| 22 | Spring Data JPA | Entity、Repository、基础查询 | 进行中 |
-| 23 | Entity 与 DTO 转换 | 隔离数据库模型和 API 模型 | 计划中 |
+| 22 | Spring Data JPA | Entity、Repository、基础查询 | 已完成 |
+| 23 | Entity 与 DTO 转换 | 隔离数据库模型和 API 模型 | 进行中 |
 | 24 | 数据关系 | 一对多、多对一、级联与查询问题 | 计划中 |
 | 25 | 分页、排序与筛选 | `Pageable`、动态查询、前端列表参数 | 计划中 |
 | 26 | 事务与并发更新 | `@Transactional`、回滚、库存一致性 | 计划中 |

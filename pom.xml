@@ -17,7 +17,7 @@
 
     <properties>
         <java.version>25</java.version>
-        <start-class>org.example.lesson22.Lesson22Application</start-class>
+        <start-class>org.example.lesson23.Lesson23Application</start-class>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
