@@ -12,13 +12,13 @@ public class ApiResponse<T> {
     }
 
     public static <T> ApiResponse<T> success(T data) {
-        // TODO 1: 返回包含 data 的成功响应。
-        return null;
+        // DONE 1: 返回包含 data 的成功响应。
+        return new ApiResponse<>(true,data,null);
     }
 
     public static <T> ApiResponse<T> failure(String message) {
-        // TODO 2: 返回包含 message 的失败响应。
-        return null;
+        // DONE 2: 返回包含 message 的失败响应。
+        return new ApiResponse<>(false,null,message);
     }
 
     public boolean isSuccess() {

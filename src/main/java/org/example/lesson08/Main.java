@@ -20,6 +20,11 @@ public class Main {
     }
 
     private static <T> void printResponse(ApiResponse<T> response) {
-        // TODO 3: 根据 isSuccess() 打印 "Success: 数据" 或 "Failure: 消息"。
+        // DONE 3: 根据 isSuccess() 打印 "Success: 数据" 或 "Failure: 消息"。
+        if(response.isSuccess()){
+            System.out.println("Success: "+ response.getData());
+        }else{
+            System.out.println("Failure: "+ response.getMessage());
+        }
     }
 }

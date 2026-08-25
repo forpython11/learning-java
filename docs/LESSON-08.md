@@ -1,6 +1,6 @@
 # Lesson 08: 使用泛型封装 API 响应
 
-> 状态：进行中
+> 状态：已完成（2026-08-25）
 
 泛型使用类型占位符编写可复用代码。这一课用 `ApiResponse<T>` 同时包装用户对象和角色列表。
 
@@ -70,4 +70,3 @@ new ApiResponse<>(false, null, message)
 ```java
 private static <T> void printResponse(ApiResponse<T> response)
 ```
-
