@@ -1,6 +1,6 @@
 # Lesson 06: 使用 Map 按 ID 存取数据
 
-> 状态：进行中
+> 状态：已完成（2026-08-25）
 
 后端经常需要根据 ID 快速查找数据。这一课使用 `Map<String, Customer>` 实现一个内存客户仓库。
 
@@ -40,4 +40,3 @@ Duplicate rejected: Customer ID already exists: C001
 - 保存数据：`customers.put(customer.getId(), customer)`。
 - 查找结果可以先保存到局部变量 `Customer customer`。
 - Map 找不到对应的 Key 时，`get` 返回 `null`。
-
