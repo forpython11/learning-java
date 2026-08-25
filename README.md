@@ -2,7 +2,7 @@
 
 一个面向前端开发者的 Java 学习项目。课程使用 TypeScript/JavaScript 中熟悉的概念对照 Java，通过小型练习逐步学习语法、面向对象、集合、异常、测试和泛型。
 
-完整的 32 课路线、阶段目标和最终项目见 [`docs/LEARNING-PLAN.md`](docs/LEARNING-PLAN.md)。
+完整的 32 课路线、阶段目标和最终项目见 [`docs/LEARNING-PLAN.md`](docs/LEARNING-PLAN.md)。个人阶段复盘和补缺清单见 [`docs/LEARNING-REVIEW.md`](docs/LEARNING-REVIEW.md)。
 
 ## 环境要求
 
@@ -52,7 +52,8 @@ java -cp target/classes org.example.lesson07.Main
 | [Lesson 16](docs/LESSON-16.md) | REST 路由与参数 | 已完成 |
 | [Lesson 17](docs/LESSON-17.md) | POST 请求与 DTO 校验 | 已完成 |
 | [Lesson 18](docs/LESSON-18.md) | 分层架构与构造器注入 | 已完成 |
-| [Lesson 19](docs/LESSON-19.md) | 全局异常处理 | 进行中 |
+| [Lesson 19](docs/LESSON-19.md) | 全局异常处理 | 已完成 |
+| [Lesson 20](docs/LESSON-20.md) | 配置、Profile 与日志 | 进行中 |
 
 ## 项目结构
 
@@ -76,7 +77,9 @@ learning-java/
 │   ├── lesson16/                 第十六课（路径参数与查询参数）
 │   ├── lesson17/                 第十七课（POST 与 DTO 校验）
 │   ├── lesson18/                 第十八课（分层架构与依赖注入）
-│   └── lesson19/                 第十九课（全局异常处理）
+│   ├── lesson19/                 第十九课（全局异常处理）
+│   └── lesson20/                 第二十课（配置、Profile 与日志）
+├── src/main/resources/          Spring Boot 配置文件
 ├── src/test/java/                JUnit 测试代码
 └── pom.xml                       Maven 项目配置
 ```
@@ -105,6 +108,7 @@ learning-java/
 | Zod 表单校验 | Bean Validation、`@Valid` |
 | 显式传入 service/repository | Spring 构造器注入 |
 | Express 错误处理中间件 | Spring `@RestControllerAdvice` |
+| `.env` / 构建环境变量 | Spring Profile 与配置文件 |
 | Jest / Vitest | JUnit |
 | npm / package.json | Maven / pom.xml |
 
