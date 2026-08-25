@@ -1,6 +1,6 @@
 # Lesson 13: 使用 Jackson 处理 JSON
 
-> 状态：进行中
+> 状态：已完成（2026-08-25）
 
 前后端通过 HTTP 交换数据时通常使用 JSON。本课使用 Jackson 在 Java 对象和 JSON 字符串之间转换，并练习 Java 字段名与 JSON 字段名不一致的情况。
 

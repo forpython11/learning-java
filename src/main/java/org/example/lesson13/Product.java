@@ -6,7 +6,8 @@ import java.math.BigDecimal;
 
 public record Product(
         String id,
-        // TODO 1: 使用 @JsonProperty 将 JSON 字段名设置为 product_name。
+        // DONE 1: 使用 @JsonProperty 将 JSON 字段名设置为 product_name。
+        @JsonProperty("product_name")
         String name,
         BigDecimal price
 ) {

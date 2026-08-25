@@ -9,8 +9,8 @@
 ## 当前进度
 
 ```text
-已完成：Lesson 01 - Lesson 12
-进行中：Lesson 13
+已完成：Lesson 01 - Lesson 13
+进行中：Lesson 14
 总计划：32 课
 ```
 
@@ -43,8 +43,8 @@
 | 10 | BigDecimal 与金额计算 | 精确金额、舍入规则、折扣和总价 | 已完成 |
 | 11 | 日期与时间 | `LocalDate`、`LocalDateTime`、格式化、时区意识 | 已完成 |
 | 12 | 自定义业务异常 | 异常层次、错误码、输入错误与状态错误 | 已完成 |
-| 13 | JSON 序列化 | Jackson、Java 对象与 JSON 转换、字段命名 | 进行中 |
-| 14 | HTTP 客户端与配置 | `HttpClient`、请求外部 API、环境配置 | 计划中 |
+| 13 | JSON 序列化 | Jackson、Java 对象与 JSON 转换、字段命名 | 已完成 |
+| 14 | HTTP 客户端与配置 | `HttpClient`、请求外部 API、环境配置 | 进行中 |
 
 阶段项目：实现一个纯 Java 订单服务，能够计算金额、记录时间、输出 JSON，并调用一个外部 HTTP API。
 

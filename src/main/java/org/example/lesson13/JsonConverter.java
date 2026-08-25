@@ -7,12 +7,12 @@ public class JsonConverter {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     public String toJson(Product product) throws JsonProcessingException {
-        // TODO 2: 将 product 序列化为 JSON 字符串。
-        return "";
+        // DONE 2: 将 product 序列化为 JSON 字符串。
+        return objectMapper.writeValueAsString(product);
     }
 
     public Product fromJson(String json) throws JsonProcessingException {
-        // TODO 3: 将 JSON 字符串反序列化为 Product。
-        return new Product("", "", null);
+        // DONE 3: 将 JSON 字符串反序列化为 Product。
+        return objectMapper.readValue(json, Product.class);
     }
 }
