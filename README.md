@@ -47,7 +47,8 @@ java -cp target/classes org.example.lesson07.Main
 | [Lesson 11](docs/LESSON-11.md) | 使用日期与时间 API | 已完成 |
 | [Lesson 12](docs/LESSON-12.md) | 自定义业务异常 | 已完成 |
 | [Lesson 13](docs/LESSON-13.md) | 使用 Jackson 处理 JSON | 已完成 |
-| [Lesson 14](docs/LESSON-14.md) | 使用 HttpClient 请求 API | 进行中 |
+| [Lesson 14](docs/LESSON-14.md) | 使用 HttpClient 请求 API | 已完成 |
+| [Lesson 15](docs/LESSON-15.md) | 第一个 Spring Boot REST API | 进行中 |
 
 ## 项目结构
 
@@ -66,7 +67,8 @@ learning-java/
 │   ├── lesson11/                 第十一课
 │   ├── lesson12/                 第十二课
 │   ├── lesson13/                 第十三课
-│   └── lesson14/                 第十四课
+│   ├── lesson14/                 第十四课
+│   └── lesson15/                 第十五课（Spring Boot 应用入口）
 ├── src/test/java/                JUnit 测试代码
 └── pom.xml                       Maven 项目配置
 ```
@@ -90,6 +92,7 @@ learning-java/
 | `class X extends Error` | 自定义类 `extends RuntimeException` |
 | `JSON.stringify` / `JSON.parse` | Jackson `ObjectMapper` |
 | `fetch` | Java `HttpClient` |
+| Express 路由 | Spring `@RestController`、`@GetMapping` |
 | Jest / Vitest | JUnit |
 | npm / package.json | Maven / pom.xml |
 

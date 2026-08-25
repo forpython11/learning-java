@@ -9,8 +9,8 @@
 ## 当前进度
 
 ```text
-已完成：Lesson 01 - Lesson 13
-进行中：Lesson 14
+已完成：Lesson 01 - Lesson 14
+进行中：Lesson 15
 总计划：32 课
 ```
 
@@ -44,7 +44,7 @@
 | 11 | 日期与时间 | `LocalDate`、`LocalDateTime`、格式化、时区意识 | 已完成 |
 | 12 | 自定义业务异常 | 异常层次、错误码、输入错误与状态错误 | 已完成 |
 | 13 | JSON 序列化 | Jackson、Java 对象与 JSON 转换、字段命名 | 已完成 |
-| 14 | HTTP 客户端与配置 | `HttpClient`、请求外部 API、环境配置 | 进行中 |
+| 14 | HTTP 客户端与配置 | `HttpClient`、请求外部 API、环境配置 | 已完成 |
 
 阶段项目：实现一个纯 Java 订单服务，能够计算金额、记录时间、输出 JSON，并调用一个外部 HTTP API。
 
@@ -52,14 +52,14 @@
 
 目标：搭建前端能够直接调用的 Java Web 服务。
 
-| 课程 | 主题 | 核心能力 |
-| --- | --- | --- |
-| 15 | 第一个 Spring Boot 应用 | 应用启动、依赖管理、第一个 GET 接口 |
-| 16 | REST 路由与参数 | 路径参数、查询参数、HTTP 状态码 |
-| 17 | POST 与 DTO 校验 | JSON 请求体、Bean Validation、响应 DTO |
-| 18 | 分层架构与依赖注入 | Controller、Service、Repository、构造器注入 |
-| 19 | 全局异常处理 | `@ControllerAdvice`、统一错误响应 |
-| 20 | 配置、Profile 与日志 | `application.yml`、环境变量、结构化日志 |
+| 课程 | 主题 | 核心能力 | 状态 |
+| --- | --- | --- | --- |
+| 15 | 第一个 Spring Boot 应用 | 应用启动、依赖管理、第一个 GET 接口 | 进行中 |
+| 16 | REST 路由与参数 | 路径参数、查询参数、HTTP 状态码 | 计划中 |
+| 17 | POST 与 DTO 校验 | JSON 请求体、Bean Validation、响应 DTO | 计划中 |
+| 18 | 分层架构与依赖注入 | Controller、Service、Repository、构造器注入 | 计划中 |
+| 19 | 全局异常处理 | `@ControllerAdvice`、统一错误响应 | 计划中 |
+| 20 | 配置、Profile 与日志 | `application.yml`、环境变量、结构化日志 | 计划中 |
 
 阶段项目：实现一个内存版商品 REST API，支持新增、查询、修改、删除和参数校验，并由前端页面调用。
 

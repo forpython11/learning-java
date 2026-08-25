@@ -23,19 +23,24 @@ public class ProductApiClient {
     }
 
     private URI buildProductUri(String productId) {
-        // TODO 1: 拼接商品路径并创建 URI。
-        return URI.create(baseUrl);
+        // DONE 1: 拼接商品路径并创建 URI。
+        return URI.create(baseUrl+"/products/"+productId);
     }
 
     private HttpRequest buildRequest(String productId) {
-        // TODO 2: 添加 Accept: application/json 请求头。
-        return HttpRequest.newBuilder()
+        // DONE 2: 添加 Accept: application/json 请求头。
+        return HttpRequest.newBuilder().header(
+                "Accept","application/json"
+                )
                 .uri(buildProductUri(productId))
                 .GET()
                 .build();
     }
 
     private void ensureSuccess(HttpResponse<String> response) {
-        // TODO 3: 状态码不是 2xx 时抛出 IllegalStateException。
+        // DONE 3: 状态码不是 2xx 时抛出 IllegalStateException。
+        if(response.statusCode()<200||response.statusCode()>=300){
+            throw new IllegalStateException("HTTP request failed: " + response.statusCode());
+        }
     }
 }
