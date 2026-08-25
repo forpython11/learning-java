@@ -45,7 +45,8 @@ java -cp target/classes org.example.lesson07.Main
 | [Lesson 09](docs/LESSON-09.md) | 使用 record 构建不可变 DTO | 已完成 |
 | [Lesson 10](docs/LESSON-10.md) | 使用 BigDecimal 计算金额 | 已完成 |
 | [Lesson 11](docs/LESSON-11.md) | 使用日期与时间 API | 已完成 |
-| [Lesson 12](docs/LESSON-12.md) | 自定义业务异常 | 进行中 |
+| [Lesson 12](docs/LESSON-12.md) | 自定义业务异常 | 已完成 |
+| [Lesson 13](docs/LESSON-13.md) | 使用 Jackson 处理 JSON | 进行中 |
 
 ## 项目结构
 
@@ -62,7 +63,8 @@ learning-java/
 │   ├── lesson09/                 第九课
 │   ├── lesson10/                 第十课
 │   ├── lesson11/                 第十一课
-│   └── lesson12/                 第十二课
+│   ├── lesson12/                 第十二课
+│   └── lesson13/                 第十三课
 ├── src/test/java/                JUnit 测试代码
 └── pom.xml                       Maven 项目配置
 ```
@@ -84,6 +86,7 @@ learning-java/
 | 金额字符串 + decimal 库 | `BigDecimal` |
 | `Date` / 日期库 | `LocalDate`、`LocalDateTime` |
 | `class X extends Error` | 自定义类 `extends RuntimeException` |
+| `JSON.stringify` / `JSON.parse` | Jackson `ObjectMapper` |
 | Jest / Vitest | JUnit |
 | npm / package.json | Maven / pom.xml |
 
