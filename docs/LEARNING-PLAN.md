@@ -9,8 +9,8 @@
 ## 当前进度
 
 ```text
-已完成：Lesson 01 - Lesson 16
-进行中：Lesson 17
+已完成：Lesson 01 - Lesson 17
+进行中：Lesson 18
 总计划：32 课
 ```
 
@@ -56,8 +56,8 @@
 | --- | --- | --- | --- |
 | 15 | 第一个 Spring Boot 应用 | 应用启动、依赖管理、第一个 GET 接口 | 已完成 |
 | 16 | REST 路由与参数 | 路径参数、查询参数、HTTP 状态码 | 已完成 |
-| 17 | POST 与 DTO 校验 | JSON 请求体、Bean Validation、响应 DTO | 进行中 |
-| 18 | 分层架构与依赖注入 | Controller、Service、Repository、构造器注入 | 计划中 |
+| 17 | POST 与 DTO 校验 | JSON 请求体、Bean Validation、响应 DTO | 已完成 |
+| 18 | 分层架构与依赖注入 | Controller、Service、Repository、构造器注入 | 进行中 |
 | 19 | 全局异常处理 | `@ControllerAdvice`、统一错误响应 | 计划中 |
 | 20 | 配置、Profile 与日志 | `application.yml`、环境变量、结构化日志 | 计划中 |
 

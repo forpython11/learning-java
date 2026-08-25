@@ -1,6 +1,6 @@
 # Lesson 17: POST 请求与 DTO 校验
 
-> 状态：进行中
+> 状态：已完成（2026-08-25）
 
 本课实现创建商品接口。Spring 会把前端发送的 JSON 转换成请求 DTO，并在进入业务方法前执行 Bean Validation 校验。
 

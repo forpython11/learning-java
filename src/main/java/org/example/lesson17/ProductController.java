@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductController {
     @PostMapping
     public ResponseEntity<ProductResponse> create(
-            // TODO 3: 在已有的 @RequestBody 前添加 @Valid。
+            // DONE 3: 在已有的 @RequestBody 前添加 @Valid。
+            @Valid
             @RequestBody CreateProductRequest request
     ) {
         ProductResponse response = new ProductResponse("P200", request.name(), request.price());

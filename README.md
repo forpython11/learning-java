@@ -50,7 +50,8 @@ java -cp target/classes org.example.lesson07.Main
 | [Lesson 14](docs/LESSON-14.md) | 使用 HttpClient 请求 API | 已完成 |
 | [Lesson 15](docs/LESSON-15.md) | 第一个 Spring Boot REST API | 已完成 |
 | [Lesson 16](docs/LESSON-16.md) | REST 路由与参数 | 已完成 |
-| [Lesson 17](docs/LESSON-17.md) | POST 请求与 DTO 校验 | 进行中 |
+| [Lesson 17](docs/LESSON-17.md) | POST 请求与 DTO 校验 | 已完成 |
+| [Lesson 18](docs/LESSON-18.md) | 分层架构与构造器注入 | 进行中 |
 
 ## 项目结构
 
@@ -72,7 +73,8 @@ learning-java/
 │   ├── lesson14/                 第十四课
 │   ├── lesson15/                 第十五课（Spring Boot 应用入口）
 │   ├── lesson16/                 第十六课（路径参数与查询参数）
-│   └── lesson17/                 第十七课（POST 与 DTO 校验）
+│   ├── lesson17/                 第十七课（POST 与 DTO 校验）
+│   └── lesson18/                 第十八课（分层架构与依赖注入）
 ├── src/test/java/                JUnit 测试代码
 └── pom.xml                       Maven 项目配置
 ```
@@ -99,6 +101,7 @@ learning-java/
 | Express 路由 | Spring `@RestController`、`@GetMapping` |
 | `request.params` / `request.query` | `@PathVariable` / `@RequestParam` |
 | Zod 表单校验 | Bean Validation、`@Valid` |
+| 显式传入 service/repository | Spring 构造器注入 |
 | Jest / Vitest | JUnit |
 | npm / package.json | Maven / pom.xml |
 

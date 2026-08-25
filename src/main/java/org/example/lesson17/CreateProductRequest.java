@@ -6,9 +6,11 @@ import jakarta.validation.constraints.Positive;
 import java.math.BigDecimal;
 
 public record CreateProductRequest(
-        // TODO 1: 添加名称非空白校验和指定消息。
+        // DONE 1: 添加名称非空白校验和指定消息。
+        @NotBlank(message = "Name must not be blank")
         String name,
-        // TODO 2: 添加价格为正数校验和指定消息。
+        // DONE 2: 添加价格为正数校验和指定消息。
+        @Positive(message = "Price must be greater than 0")
         BigDecimal price
 ) {
 }
