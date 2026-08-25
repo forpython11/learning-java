@@ -2,6 +2,8 @@
 
 一个面向前端开发者的 Java 学习项目。课程使用 TypeScript/JavaScript 中熟悉的概念对照 Java，通过小型练习逐步学习语法、面向对象、集合、异常、测试和泛型。
 
+完整的 32 课路线、阶段目标和最终项目见 [`docs/LEARNING-PLAN.md`](docs/LEARNING-PLAN.md)。
+
 ## 环境要求
 
 - JDK 25
@@ -47,7 +49,7 @@ java -cp target/classes org.example.lesson07.Main
 ```text
 learning-java/
 ├── AGENTS.md                     AI 协作与自动出题规则
-├── docs/                         每一课的说明和练习要求
+├── docs/                         总计划、每课说明和练习要求
 ├── src/main/java/org/example/    Java 源代码
 │   ├── Main.java                 第一课入口
 │   ├── User.java                 第一课用户模型
