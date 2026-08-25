@@ -44,7 +44,8 @@ java -cp target/classes org.example.lesson07.Main
 | [Lesson 08](docs/LESSON-08.md) | 使用泛型封装 API 响应 | 已完成 |
 | [Lesson 09](docs/LESSON-09.md) | 使用 record 构建不可变 DTO | 已完成 |
 | [Lesson 10](docs/LESSON-10.md) | 使用 BigDecimal 计算金额 | 已完成 |
-| [Lesson 11](docs/LESSON-11.md) | 使用日期与时间 API | 进行中 |
+| [Lesson 11](docs/LESSON-11.md) | 使用日期与时间 API | 已完成 |
+| [Lesson 12](docs/LESSON-12.md) | 自定义业务异常 | 进行中 |
 
 ## 项目结构
 
@@ -60,7 +61,8 @@ learning-java/
 │   ├── lesson08/                 第八课
 │   ├── lesson09/                 第九课
 │   ├── lesson10/                 第十课
-│   └── lesson11/                 第十一课
+│   ├── lesson11/                 第十一课
+│   └── lesson12/                 第十二课
 ├── src/test/java/                JUnit 测试代码
 └── pom.xml                       Maven 项目配置
 ```
@@ -81,6 +83,7 @@ learning-java/
 | `readonly` 数据对象 | `record` |
 | 金额字符串 + decimal 库 | `BigDecimal` |
 | `Date` / 日期库 | `LocalDate`、`LocalDateTime` |
+| `class X extends Error` | 自定义类 `extends RuntimeException` |
 | Jest / Vitest | JUnit |
 | npm / package.json | Maven / pom.xml |
 
