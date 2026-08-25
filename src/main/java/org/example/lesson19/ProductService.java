@@ -1,8 +1,6 @@
-package org.example.lesson18;
+package org.example.lesson19;
 
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class ProductService {
@@ -12,8 +10,8 @@ public class ProductService {
         this.repository = repository;
     }
 
-    public Optional<Product> findById(String id) {
-        // DONE 2: 委托 repository 查询。
-        return repository.findById(id);
+    public Product getById(String id) {
+        // TODO 1: 商品不存在时抛出 ProductNotFoundException。
+        return new Product(id, "TODO");
     }
 }

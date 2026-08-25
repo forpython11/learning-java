@@ -1,6 +1,6 @@
 # Lesson 18: 分层架构与构造器注入
 
-> 状态：进行中
+> 状态：已完成（2026-08-25）
 
 Controller 不应该同时负责 HTTP、业务规则和数据存取。本课把商品查询拆成 Controller、Service、Repository 三层，并让 Spring 负责创建对象和注入依赖。
 

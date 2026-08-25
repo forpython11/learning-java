@@ -1,4 +1,4 @@
-package org.example.lesson18;
+package org.example.lesson19;
 
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +12,6 @@ public class ProductRepository {
     );
 
     public Optional<Product> findById(String id) {
-        // DONE 1: 从 Map 查询商品并包装成 Optional。
         return Optional.ofNullable(products.get(id));
     }
 }
