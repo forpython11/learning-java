@@ -9,8 +9,8 @@
 ## 当前进度
 
 ```text
-已完成：Lesson 01 - Lesson 09
-进行中：Lesson 10
+已完成：Lesson 01 - Lesson 10
+进行中：Lesson 11
 总计划：32 课
 ```
 
@@ -40,8 +40,8 @@
 
 | 课程 | 主题 | 核心能力 | 状态 |
 | --- | --- | --- | --- |
-| 10 | BigDecimal 与金额计算 | 精确金额、舍入规则、折扣和总价 | 进行中 |
-| 11 | 日期与时间 | `LocalDate`、`LocalDateTime`、格式化、时区意识 | 计划中 |
+| 10 | BigDecimal 与金额计算 | 精确金额、舍入规则、折扣和总价 | 已完成 |
+| 11 | 日期与时间 | `LocalDate`、`LocalDateTime`、格式化、时区意识 | 进行中 |
 | 12 | 自定义业务异常 | 异常层次、错误码、输入错误与状态错误 | 计划中 |
 | 13 | JSON 序列化 | Jackson、Java 对象与 JSON 转换、字段命名 | 计划中 |
 | 14 | HTTP 客户端与配置 | `HttpClient`、请求外部 API、环境配置 | 计划中 |
