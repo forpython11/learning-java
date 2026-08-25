@@ -1,6 +1,6 @@
 # Lesson 20: 配置、Profile 与日志
 
-> 状态：进行中
+> 状态：已完成（2026-08-25）
 
 真实项目不会把不同环境的配置写死在 Java 代码里。本课使用 `application.yml` 提供默认配置，使用 `application-dev.yml` 覆盖开发环境配置，并通过 SLF4J 记录结构化日志。
 

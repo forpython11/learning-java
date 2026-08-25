@@ -1,3 +1,3 @@
 app:
-  # TODO 2: 设置 dev 环境目录名称 Development Catalog。
-  catalog-name: TODO
+  # DONE 2: 设置 dev 环境目录名称 Development Catalog。
+  catalog-name: Development Catalog

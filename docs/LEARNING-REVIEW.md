@@ -1,7 +1,7 @@
 # Java 学习阶段复盘与查漏补缺
 
 > 复盘日期：2026-08-25
-> 当前进度：已完成 Lesson 01 - Lesson 19，Lesson 20 进行中
+> 当前进度：已完成 Lesson 01 - Lesson 20，Lesson 21 进行中
 
 ## 核心结论
 

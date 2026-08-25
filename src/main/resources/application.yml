@@ -1,6 +1,6 @@
 app:
-  # TODO 1: 设置默认目录名称 Product Catalog。
-  catalog-name: TODO
+  # DONE 1: 设置默认目录名称 Product Catalog。
+  catalog-name: Product Catalog
 
 logging:
   level:

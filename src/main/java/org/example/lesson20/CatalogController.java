@@ -29,8 +29,12 @@ public class CatalogController {
         String[] activeProfiles = environment.getActiveProfiles();
         String profile = activeProfiles.length == 0 ? "default" : activeProfiles[0];
 
-        // TODO 3: 使用占位符记录 catalogName 和 profile。
-        log.info("TODO");
+        // DONE 3: 使用占位符记录 catalogName 和 profile。
+        log.info(
+                "Catalog requested: name={}, profile={}",
+                catalogName,
+                profile
+        );
 
         return new CatalogInfo(catalogName, profile);
     }

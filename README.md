@@ -53,7 +53,8 @@ java -cp target/classes org.example.lesson07.Main
 | [Lesson 17](docs/LESSON-17.md) | POST 请求与 DTO 校验 | 已完成 |
 | [Lesson 18](docs/LESSON-18.md) | 分层架构与构造器注入 | 已完成 |
 | [Lesson 19](docs/LESSON-19.md) | 全局异常处理 | 已完成 |
-| [Lesson 20](docs/LESSON-20.md) | 配置、Profile 与日志 | 进行中 |
+| [Lesson 20](docs/LESSON-20.md) | 配置、Profile 与日志 | 已完成 |
+| [Lesson 21](docs/LESSON-21.md) | SQL 与 H2 入门 | 进行中 |
 
 ## 项目结构
 
@@ -78,8 +79,9 @@ learning-java/
 │   ├── lesson17/                 第十七课（POST 与 DTO 校验）
 │   ├── lesson18/                 第十八课（分层架构与依赖注入）
 │   ├── lesson19/                 第十九课（全局异常处理）
-│   └── lesson20/                 第二十课（配置、Profile 与日志）
-├── src/main/resources/          Spring Boot 配置文件
+│   ├── lesson20/                 第二十课（配置、Profile 与日志）
+│   └── lesson21/                 第二十一课（SQL 与 H2）
+├── src/main/resources/           Spring Boot 配置与数据库初始化脚本
 ├── src/test/java/                JUnit 测试代码
 └── pom.xml                       Maven 项目配置
 ```
@@ -109,6 +111,7 @@ learning-java/
 | 显式传入 service/repository | Spring 构造器注入 |
 | Express 错误处理中间件 | Spring `@RestControllerAdvice` |
 | `.env` / 构建环境变量 | Spring Profile 与配置文件 |
+| SQLite / SQL 客户端 | H2 / Spring `JdbcTemplate` |
 | Jest / Vitest | JUnit |
 | npm / package.json | Maven / pom.xml |
 
