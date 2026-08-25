@@ -1,6 +1,6 @@
 # Lesson 15: 第一个 Spring Boot REST API
 
-> 状态：进行中
+> 状态：已完成（2026-08-25）
 
 从本课开始进入 Spring Boot。你将启动一个内嵌 Web 服务器，并创建第一个可以由浏览器或前端 `fetch` 调用的 GET 接口。
 
@@ -11,7 +11,7 @@
 也可以在终端运行：
 
 ```shell
-mvn spring-boot:run
+mvn spring-boot:run -Dstart-class=org.example.lesson15.Lesson15Application
 ```
 
 ## 任务

@@ -17,6 +17,7 @@
 
     <properties>
         <java.version>25</java.version>
+        <start-class>org.example.lesson16.Lesson16Application</start-class>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -44,7 +45,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>org.example.lesson15.Lesson15Application</mainClass>
+                    <mainClass>${start-class}</mainClass>
                 </configuration>
             </plugin>
         </plugins>
