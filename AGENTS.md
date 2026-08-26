@@ -48,11 +48,23 @@ When the active lesson is fully correct, automatically complete all of the follo
 4. Add `docs/LESSON-XX.md` with goals, tasks, expected output, TypeScript comparison, and hints.
 5. Add a compiling exercise skeleton under `org.example.lessonXX` with two or three focused `TODO` items.
 6. Update the lesson progress and project structure in `README.md`.
-7. Run the complete Maven test suite and any relevant lesson entry point.
-8. Commit the completed lesson and new lesson skeleton in one focused Git commit.
-9. Push `main` to `origin` and verify the remote commit and tree when the transport reports an ambiguous timeout or reset.
+7. Update `docs/LEARNING-REVIEW.md` using the learner's demonstrated progress and difficulties from the completed task.
+8. Run the complete Maven test suite and any relevant lesson entry point.
+9. Commit the completed lesson, learning review, and new lesson skeleton in one focused Git commit.
+10. Push `main` to `origin` and verify the remote commit and tree when the transport reports an ambiguous timeout or reset.
 
 Do not generate the next lesson when the current lesson still has a behavioral, exception, output, or test-quality problem.
+
+## Learning Review Workflow
+
+After every completed learner-facing lesson or exercise task, update `docs/LEARNING-REVIEW.md` before reporting completion.
+
+- Set the review date and lesson progress to the current state.
+- Record only learning progress, recurring mistakes, and remaining gaps demonstrated by the learner's recent code or questions. Do not invent mastery from passing tests alone.
+- Add or adjust the next targeted practice so it matches the active lesson and the learner's current difficulty.
+- Prefer a focused incremental edit. Do not rewrite unrelated review history when the current task provides no new evidence about it.
+- If the task completes a lesson and triggers the automatic next-lesson workflow, include the review update in the same commit and push.
+- Documentation-only maintenance, Git operations, environment setup, and other tasks that do not demonstrate a change in learning state do not require another review update.
 
 ## Exercise Design
 
