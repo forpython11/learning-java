@@ -2,7 +2,7 @@
 
 > 复盘日期：2026-08-26
 >
-> 当前进度：已完成 Lesson 01 - Lesson 24，Lesson 25 进行中
+> 当前进度：已完成 Lesson 01 - Lesson 25，Lesson 26 进行中
 >
 > 当前阶段：已经能在提示下完成 Spring Boot + JPA 小型接口，正在从“看懂局部代码”过渡到“独立组织完整数据流”
 
@@ -32,6 +32,8 @@
 - 能在提示后写出 Spring Data JPA 派生查询方法，例如按名称片段搜索、忽略大小写并排序。
 - 能完成 `Entity -> DTO` 的基本转换，不再只关注数据库对象本身。
 - 能使用 `stream().map(...).toList()` 转换集合，并在展开讲解后理解每一步的作用。
+- 已完成分页查询的数据流：能声明返回 `Page<ProductEntity>` 的 Repository 方法，创建 `PageRequest`，并把当前页 Entity 转换成 DTO。
+- 在指出差异后能改用 `getTotalElements()` 返回全部匹配记录数，最终接口的分页、排序、筛选和非法参数行为均通过实际请求验证。
 - 能完成一对多关系查询：正确使用 `@EntityGraph(attributePaths = "products")`，并把分类及其商品转换成嵌套 DTO。
 - 遇到 `找不到符号 Optional` 时，能够根据提示补充导入并继续完成题目。
 - 会主动询问“为什么这样写”，而不只是要求给出答案。这对形成长期理解比记模板更重要。
@@ -44,7 +46,7 @@
 | Spring MVC | 正在形成 | 能理解路由、参数、状态码和全局异常处理，但注解较多时容易混乱 |
 | Repository / JPA | 入门阶段 | 能按提示完成派生查询和关联加载，尚未稳定理解方法签名与查询行为 |
 | DTO 转换 | 正在形成 | 能写 `from(entity)`，但有时会用 `BigDecimal.ZERO` 或空集合代替真实字段 |
-| `Optional` / `List` / `Page` | 重点训练中 | 容易混淆“可能有一个”“有多个”和“带分页信息的多个” |
+| `Optional` / `List` / `Page` | 正在形成 | 最终能完成 `Page<ProductEntity>` 数据流，但开始时曾把分页查询写成 `Optional`，仍需独立练习 |
 | Stream 数据流 | 重点训练中 | 能模仿 `map().toList()`，还需要练习说出每一步的类型 |
 | 独立验证 | 需要加强 | 经常写完后询问“现在对了吗”，还未形成固定自测流程 |
 
@@ -67,7 +69,7 @@ Page<ProductEntity>      当前页的多个商品 + 总数、页码等分页信�
 - 查询全部或条件列表：通常是 `List<T>`。
 - 分页列表：通常是 `Page<T>`。
 
-Lesson 25 的首要目标就是把 `List<T>` 和 `Page<T>` 区分稳定。
+Lesson 25 已经完成了这条数据流，但过程中仍需要提示才能稳定区分这些容器。后续遇到新 Repository 方法时继续先判断查询结果数量。
 
 ### 2. 方法调用前没有先核对签名
 
@@ -181,17 +183,27 @@ Spring Boot 项目       在配置中使用 JDBC URL 和同一组账号连接服
 
 如果其中一项说不清，先把链式代码拆成带明确类型的局部变量，再继续写。
 
-## Lesson 25 针对性训练
+## Lesson 25 完成记录
 
-本课不要急着一次写完三个 TODO，按下面顺序练习：
+本课已完成，实际表现如下：
 
-- [ ] 写 Repository 方法前，说出两个参数类型和返回类型。
+- [x] 写出 Repository 方法的两个参数类型和 `Page<ProductEntity>` 返回类型。
 - [ ] 用一句话解释为什么返回 `Page<ProductEntity>`，而不是 `List<ProductEntity>`。
-- [ ] 把 `result.getContent()` 的类型写在纸上或注释中。
-- [ ] 先用 Lambda 完成商品 DTO 转换，再尝试方法引用。
-- [ ] 说出 `PageRequest.of(page, size, sort)` 的返回类型。
-- [ ] 分别请求第一页、第二页、名称筛选和非法页码。
+- [x] 根据编译器提示识别 `result.getContent()` 是 `List<ProductEntity>`，并转换为 `List<ProductResponse>`。
+- [x] 使用 `ProductResponse::from` 完成当前页 DTO 转换。
+- [x] 用明确的 `PageRequest` 局部变量接住 `PageRequest.of(...)` 的返回值。
+- [ ] 独立请求第一页、第二页、名称筛选和非法页码，并逐项核对结果。
 - [ ] 在询问“对了吗”之前，先把自己的预期结果和实际结果进行一次比较。
+
+本课反复出现的两个问题需要继续留意：调用方法后没有接住返回值，以及字段名称相近时只看“像不像”而没有核对语义。例如 `getNumberOfElements()` 是当前页数量，`getTotalElements()` 才是所有匹配记录数。
+
+## Lesson 26 针对性训练
+
+- [ ] 画出“查询库存 -> 扣减库存 -> 保存订单 -> 提交或回滚”的执行顺序。
+- [ ] 解释为什么库存扣减和订单保存必须位于同一个事务。
+- [ ] 分清 Java 对象中的 `stock` 变化、SQL 刷新和事务提交三个时刻。
+- [ ] 使用重复 `orderId` 制造保存失败，并确认库存没有被扣减。
+- [ ] 用一句话解释 `@Version` 如何阻止两个并发请求互相覆盖。
 
 ## 建议的复习方式
 
@@ -210,7 +222,7 @@ Spring Boot 项目       在配置中使用 JDBC URL 和同一组账号连接服
 
 ## 下一阶段目标
 
-完成 Lesson 25 和 Lesson 26 后，应达到：
+完成 Lesson 26 后，应达到：
 
 - 能独立区分 `Optional<T>`、`List<T>` 和 `Page<T>`。
 - 能沿着 `Controller -> Repository -> Entity -> DTO -> JSON` 说明类型变化。

@@ -58,7 +58,8 @@ java -cp target/classes org.example.lesson07.Main
 | [Lesson 22](docs/LESSON-22.md) | Spring Data JPA | 已完成 |
 | [Lesson 23](docs/LESSON-23.md) | Entity 与 DTO 转换 | 已完成 |
 | [Lesson 24](docs/LESSON-24.md) | 数据关系 | 已完成 |
-| [Lesson 25](docs/LESSON-25.md) | 分页、排序与筛选 | 进行中 |
+| [Lesson 25](docs/LESSON-25.md) | 分页、排序与筛选 | 已完成 |
+| [Lesson 26](docs/LESSON-26.md) | 事务与并发更新 | 进行中 |
 
 ## 项目结构
 
@@ -88,7 +89,8 @@ learning-java/
 │   ├── lesson22/                 第二十二课（Spring Data JPA）
 │   ├── lesson23/                 第二十三课（Entity 与 DTO 转换）
 │   ├── lesson24/                 第二十四课（JPA 数据关系）
-│   └── lesson25/                 第二十五课（分页、排序与筛选）
+│   ├── lesson25/                 第二十五课（分页、排序与筛选）
+│   └── lesson26/                 第二十六课（事务与并发更新）
 ├── src/main/resources/           Spring Boot 配置与数据库初始化脚本
 ├── src/test/java/                JUnit 测试代码
 └── pom.xml                       Maven 项目配置
@@ -124,6 +126,7 @@ learning-java/
 | 数据库模型 / API 类型 | Entity / DTO `record` |
 | 嵌套对象与关联查询 | `@OneToMany` / `@ManyToOne` / `@EntityGraph` |
 | 列表页参数与分页结果 | `Pageable` / `Page<T>` |
+| ORM 事务回调与版本字段 | `@Transactional` / `@Version` |
 | Jest / Vitest | JUnit |
 | npm / package.json | Maven / pom.xml |
 
