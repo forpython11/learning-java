@@ -1,6 +1,6 @@
 # Lesson 23: Entity 与 DTO 转换
 
-> 状态：进行中
+> 状态：已完成（2026-08-26）
 
 上一课直接把 `ProductEntity` 返回给前端。本课增加 `ProductResponse` DTO，把数据库模型转换成稳定的 API 响应模型，避免数据库字段变化直接影响接口。
 
