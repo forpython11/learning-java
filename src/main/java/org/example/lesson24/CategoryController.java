@@ -17,7 +17,10 @@ public class CategoryController {
 
     @GetMapping
     public List<CategoryResponse> findAll() {
-        // TODO 3: 查询分类，并把每个 CategoryEntity 转换成 CategoryResponse。
-        return List.of();
+        // DONE 3: 查询分类，并把每个 CategoryEntity 转换成 CategoryResponse。
+        List<CategoryEntity> categories = repository.findAllByOrderByIdAsc();
+        return categories.stream()
+                .map(CategoryResponse::from)
+                .toList();
     }
 }

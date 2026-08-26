@@ -57,7 +57,8 @@ java -cp target/classes org.example.lesson07.Main
 | [Lesson 21](docs/LESSON-21.md) | SQL 与 H2 入门 | 已完成 |
 | [Lesson 22](docs/LESSON-22.md) | Spring Data JPA | 已完成 |
 | [Lesson 23](docs/LESSON-23.md) | Entity 与 DTO 转换 | 已完成 |
-| [Lesson 24](docs/LESSON-24.md) | 数据关系 | 进行中 |
+| [Lesson 24](docs/LESSON-24.md) | 数据关系 | 已完成 |
+| [Lesson 25](docs/LESSON-25.md) | 分页、排序与筛选 | 进行中 |
 
 ## 项目结构
 
@@ -86,7 +87,8 @@ learning-java/
 │   ├── lesson21/                 第二十一课（SQL 与 H2）
 │   ├── lesson22/                 第二十二课（Spring Data JPA）
 │   ├── lesson23/                 第二十三课（Entity 与 DTO 转换）
-│   └── lesson24/                 第二十四课（JPA 数据关系）
+│   ├── lesson24/                 第二十四课（JPA 数据关系）
+│   └── lesson25/                 第二十五课（分页、排序与筛选）
 ├── src/main/resources/           Spring Boot 配置与数据库初始化脚本
 ├── src/test/java/                JUnit 测试代码
 └── pom.xml                       Maven 项目配置
@@ -121,6 +123,7 @@ learning-java/
 | ORM / 数据访问库 | Spring Data JPA / `JpaRepository` |
 | 数据库模型 / API 类型 | Entity / DTO `record` |
 | 嵌套对象与关联查询 | `@OneToMany` / `@ManyToOne` / `@EntityGraph` |
+| 列表页参数与分页结果 | `Pageable` / `Page<T>` |
 | Jest / Vitest | JUnit |
 | npm / package.json | Maven / pom.xml |
 

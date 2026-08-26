@@ -1,0 +1,6 @@
+spring:
+  sql:
+    init:
+      data-locations:
+        - classpath:data.sql
+        - classpath:data-lesson25.sql
