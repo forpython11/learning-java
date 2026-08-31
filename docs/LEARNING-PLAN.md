@@ -9,8 +9,8 @@
 ## 当前进度
 
 ```text
-已完成：Lesson 01 - Lesson 26
-进行中：Lesson 27
+已完成：Lesson 01 - Lesson 27
+进行中：Lesson 28
 总计划：32 课
 ```
 
@@ -84,8 +84,8 @@
 
 | 课程 | 主题 | 核心能力 | 状态 |
 | --- | --- | --- | --- |
-| 27 | Mockito 服务测试 | Mock、依赖隔离、行为验证 | 进行中 |
-| 28 | Controller 与集成测试 | MockMvc、完整请求测试、测试数据库 | 计划中 |
+| 27 | Mockito 服务测试 | Mock、依赖隔离、行为验证 | 已完成 |
+| 28 | Controller 与集成测试 | MockMvc、完整请求测试、测试数据库 | 进行中 |
 | 29 | Spring Security 与 CORS | 登录保护、权限、前端跨域配置 | 计划中 |
 | 30 | JWT 鉴权 | 登录令牌、解析校验、用户身份传递 | 计划中 |
 | 31 | OpenAPI 与 Docker | API 文档、容器构建、环境变量 | 计划中 |

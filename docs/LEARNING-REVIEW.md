@@ -1,10 +1,10 @@
 # Java 学习阶段复盘与查漏补缺
 
-> 复盘日期：2026-08-26
+> 复盘日期：2026-08-31
 >
-> 当前进度：已完成 Lesson 01 - Lesson 26，Lesson 27 进行中
+> 当前进度：已完成 Lesson 01 - Lesson 27，Lesson 28 进行中
 >
-> 当前阶段：已经能在提示下完成 Spring Boot + JPA 事务流程，开始学习用自动化测试独立验证业务行为
+> 当前阶段：已经能在提示下使用 Mockito 验证 Service，开始学习用 MockMvc 验证完整 HTTP 与数据库链路
 
 ## 核心结论
 
@@ -37,6 +37,8 @@
 - 能为库存 Entity 添加 `@Version`，并完成数量校验、库存不足异常和正常扣减。
 - 能在逐步提示后完成 `@Transactional` Service：查询库存、修改受管理 Entity、保存订单并返回更新后的结果。
 - 第 26 课的正常购买、重复订单回滚、库存不足、缺失商品、数量边界和并发冲突均通过实际请求验证。
+- 已完成 Mockito Service 测试，能使用 Stub 安排查询结果、用断言检查返回值和异常，并用 `verify` 检查 Repository 交互。
+- 能覆盖商品不存在和库存不足两个错误分支，并最终确认三个测试均执行、`Skipped: 0`。
 - 能完成一对多关系查询：正确使用 `@EntityGraph(attributePaths = "products")`，并把分类及其商品转换成嵌套 DTO。
 - 遇到 `找不到符号 Optional` 时，能够根据提示补充导入并继续完成题目。
 - 会主动询问“为什么这样写”，而不只是要求给出答案。这对形成长期理解比记模板更重要。
@@ -52,6 +54,7 @@
 | `Optional` / `List` / `Page` | 正在形成 | 最终能完成 `Page<ProductEntity>` 数据流，但开始时曾把分页查询写成 `Optional`，仍需独立练习 |
 | Stream 数据流 | 重点训练中 | 能模仿 `map().toList()`，还需要练习说出每一步的类型 |
 | 事务与并发 | 正在形成 | 能完成 `@Transactional` 和 `@Version` 代码，但事务步骤仍需要拆解提示 |
+| 自动化测试 | 正在形成 | 能在提示下完成 Mockito 成功与失败分支，但仍需主动检查断言、交互验证和跳过数量 |
 | 独立验证 | 需要加强 | 经常写完后询问“现在对了吗”，还未形成固定自测流程 |
 
 ## 最近暴露出的关键卡点
@@ -213,11 +216,21 @@ Spring Boot 项目       在配置中使用 JDBC URL 和同一组账号连接服
 
 ## Lesson 27 针对性训练
 
-- [ ] 区分 Stub（安排返回值）、Assertion（验证结果）和 Verify（验证调用）。
-- [ ] 每个测试先写 Arrange、Act、Assert 三段，再填具体 Mockito API。
-- [ ] 成功分支同时验证返回库存和两个 Repository 的保存调用。
-- [ ] 失败分支不仅断言异常，还要验证没有发生写操作。
-- [ ] 确认最终测试结果为 `Skipped: 0`，避免空测试或禁用测试造成假绿色。
+- [x] 使用 Stub（安排返回值）、Assertion（验证结果）和 Verify（验证调用）完成三个测试。
+- [ ] 不依赖提示，用自己的话解释 Stub、Assertion 和 Verify 的职责差异。
+- [x] 成功分支同时验证返回库存和两个 Repository 的保存调用。
+- [x] 失败分支不仅断言异常，还验证没有发生写操作。
+- [x] 确认最终测试结果为 `Skipped: 0`，避免空测试或禁用测试造成假绿色。
+
+本课最终实现正确，但过程中出现了三个值得保留的提醒：Stub 使用 `p100` 而实际调用 `P100`，导致严格参数不匹配；测试一度没有断言却显示通过；完成代码后仍保留 `@Disabled` 或 `fail(...)`，造成跳过或无条件失败。说明已经能写出 Mockito API，但还需要形成“参数精确一致、结果与交互都验证、占位标记全部清理”的固定检查习惯。
+
+## Lesson 28 针对性训练
+
+- [ ] 区分 Mockito 单元测试中的 Mock Repository 与集成测试中的真实 H2 Repository。
+- [ ] 使用 Repository 准备数据，再用 MockMvc 发送 GET 请求并检查状态码和 JSON。
+- [ ] 独立完成 404 错误分支，核对错误码和消息，而不只检查请求没有抛异常。
+- [ ] 使用 MockMvc 发送 POST JSON，并再次查询 Repository 确认数据确实持久化。
+- [ ] 每次运行后核对 `Failures`、`Errors` 和 `Skipped` 三个数字。
 
 ## 建议的复习方式
 
@@ -236,7 +249,7 @@ Spring Boot 项目       在配置中使用 JDBC URL 和同一组账号连接服
 
 ## 下一阶段目标
 
-完成 Lesson 27 后，应达到：
+完成 Lesson 28 后，应达到：
 
 - 能独立区分 `Optional<T>`、`List<T>` 和 `Page<T>`。
 - 能沿着 `Controller -> Repository -> Entity -> DTO -> JSON` 说明类型变化。
@@ -244,6 +257,7 @@ Spring Boot 项目       在配置中使用 JDBC URL 和同一组账号连接服
 - 能解释常见 JPA 注解的作用，并区分固定参数名与业务属性值。
 - 能独立验证分页、筛选、排序和至少一个错误分支。
 - 能使用 Mockito 隔离 Repository，并验证 Service 的成功和失败行为。
+- 能使用 MockMvc 验证 HTTP 状态码、JSON 响应和 H2 数据库状态。
 - 能区分 Java 编译问题、Spring 接口问题和数据库服务连接问题。
 
-达到这些标准后，再进入 Controller 集成测试时，就能分清“Service 业务行为”和“HTTP 接口行为”分别应该在哪一层验证。
+达到这些标准后，再进入安全与 CORS 时，就能用自动化测试区分“业务失败”和“请求被安全规则拦截”。
