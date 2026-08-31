@@ -1,6 +1,6 @@
 # Lesson 28: 使用 MockMvc 编写 Controller 集成测试
 
-> 状态：进行中
+> 状态：已完成（2026-08-31）
 
 上一课用 Mockito 隔离 Repository，只验证了 Service 的业务判断。本课不再 Mock Service 或 Repository，而是启动 Spring 测试上下文，用 MockMvc 发送模拟 HTTP 请求，并让请求真正经过 Controller、Service、JPA 和 H2 测试数据库。
 
