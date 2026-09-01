@@ -65,7 +65,7 @@ java -cp target/classes org.example.lesson07.Main
 | [Lesson 29](docs/LESSON-29.md) | Spring Security 与 CORS | 已完成 |
 | [Lesson 30](docs/LESSON-30.md) | JWT 鉴权 | 已完成 |
 | [Lesson 31](docs/LESSON-31.md) | OpenAPI 与 Docker | 已完成 |
-| [Lesson 32](docs/LESSON-32.md) | 最终全栈项目 | 进行中 |
+| [Lesson 32](docs/LESSON-32.md) | 最终全栈项目 | 已完成 |
 
 ## 项目结构
 

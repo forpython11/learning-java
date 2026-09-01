@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.time.Instant;
+import java.util.UUID;
 
 @Service
 public class FinalOrderService {
@@ -20,18 +22,31 @@ public class FinalOrderService {
 
     @Transactional
     public OrderResponse createOrder(CreateOrderRequest request) {
-        // TODO 1: 查询商品；不存在时抛出 ProductNotFoundException。
+        // DONE 1: 查询商品；不存在时抛出 ProductNotFoundException。
         ProductEntity product = productRepository.findById(request.productId())
-                .orElse(null);
+                .orElseThrow(()->new ProductNotFoundException(request.productId()));
 
-        // TODO 2: 库存小于购买数量时抛出 InsufficientStockException。
-
-        // TODO 3: 扣减库存、计算总价、保存订单并返回真实响应。
+        // DONE 2: 库存小于购买数量时抛出 InsufficientStockException。
+        if(request.quantity()>product.getStock()){
+            throw new InsufficientStockException(request.productId());
+        }
+        // DONE 3: 扣减库存、计算总价、保存订单并返回真实响应。
+        product.decreaseStock(request.quantity());
+        BigDecimal total = product.getPrice().multiply(BigDecimal.valueOf(request.quantity()));
+        String orderId = UUID.randomUUID().toString();
+        PurchaseOrderEntity order = new PurchaseOrderEntity(
+                orderId,
+                product.getId(),
+                request.quantity(),
+                total,
+                Instant.now()
+        );
+        orderRepository.save(order);
         return new OrderResponse(
-                "TODO",
+                orderId,
                 request.productId(),
                 request.quantity(),
-                BigDecimal.ZERO,
+                total,
                 product == null ? 0 : product.getStock()
         );
     }

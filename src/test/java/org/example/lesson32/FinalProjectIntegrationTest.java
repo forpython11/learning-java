@@ -2,7 +2,6 @@ package org.example.lesson32;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -64,7 +63,6 @@ class FinalProjectIntegrationTest {
     }
 
     @Test
-    @Disabled("TODO 1: 完成商品查询后删除此注解")
     void rejectsMissingProduct() throws Exception {
         createOrder("UNKNOWN", 1)
                 .andExpect(status().isNotFound())
@@ -74,7 +72,6 @@ class FinalProjectIntegrationTest {
     }
 
     @Test
-    @Disabled("TODO 2: 完成库存校验后删除此注解")
     void rejectsInsufficientStockWithoutWriting() throws Exception {
         createOrder("P100", 6)
                 .andExpect(status().isConflict())
@@ -85,7 +82,6 @@ class FinalProjectIntegrationTest {
     }
 
     @Test
-    @Disabled("TODO 3: 完成事务下单后删除此注解")
     void createsOrderAndDeductsStock() throws Exception {
         createOrder("P100", 2)
                 .andExpect(status().isCreated())
@@ -95,6 +91,10 @@ class FinalProjectIntegrationTest {
                 .andExpect(jsonPath("$.remainingStock").value(3));
 
         assertEquals(1, orderRepository.count());
+        PurchaseOrderEntity savedOrder = orderRepository.findAll().getFirst();
+        assertEquals("P100", savedOrder.getProductId());
+        assertEquals(2, savedOrder.getQuantity());
+        assertEquals(new BigDecimal("598.00"), savedOrder.getTotal());
         assertEquals(3, productRepository.findById("P100").orElseThrow().getStock());
     }
 
