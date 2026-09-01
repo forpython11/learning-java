@@ -1,6 +1,6 @@
 # Lesson 29: Spring Security 与 CORS
 
-> 状态：进行中
+> 状态：已完成（2026-09-01）
 
 上一课的 MockMvc 请求可以直接到达 Controller。本课在 Controller 前加入 Spring Security：先判断请求者是谁，再判断其角色能否访问接口，同时只允许指定前端开发地址跨域调用。
 

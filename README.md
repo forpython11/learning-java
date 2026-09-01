@@ -62,7 +62,8 @@ java -cp target/classes org.example.lesson07.Main
 | [Lesson 26](docs/LESSON-26.md) | 事务与并发更新 | 已完成 |
 | [Lesson 27](docs/LESSON-27.md) | 使用 Mockito 测试 Service | 已完成 |
 | [Lesson 28](docs/LESSON-28.md) | 使用 MockMvc 编写 Controller 集成测试 | 已完成 |
-| [Lesson 29](docs/LESSON-29.md) | Spring Security 与 CORS | 进行中 |
+| [Lesson 29](docs/LESSON-29.md) | Spring Security 与 CORS | 已完成 |
+| [Lesson 30](docs/LESSON-30.md) | JWT 鉴权 | 进行中 |
 
 ## 项目结构
 
@@ -96,7 +97,8 @@ learning-java/
 │   ├── lesson26/                 第二十六课（事务与并发更新）
 │   ├── lesson27/                 第二十七课（Mockito 服务测试）
 │   ├── lesson28/                 第二十八课（MockMvc 集成测试）
-│   └── lesson29/                 第二十九课（Security 与 CORS）
+│   ├── lesson29/                 第二十九课（Security 与 CORS）
+│   └── lesson30/                 第三十课（JWT 鉴权）
 ├── src/main/resources/           Spring Boot 配置与数据库初始化脚本
 ├── src/test/java/                JUnit 测试代码
 └── pom.xml                       Maven 项目配置
@@ -136,6 +138,7 @@ learning-java/
 | Jest / Vitest Mock | Mockito `when` / `verify` |
 | Supertest / HTTP 集成测试 | MockMvc / `@SpringBootTest` |
 | 前端路由守卫 / CORS 配置 | Spring Security / `SecurityFilterChain` |
+| `localStorage` 中的登录令牌 | JWT / `Authorization: Bearer` |
 | Jest / Vitest | JUnit |
 | npm / package.json | Maven / pom.xml |
 

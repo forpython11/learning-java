@@ -1,6 +1,5 @@
 package org.example.lesson29;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,7 +22,6 @@ class SecurityConfigIntegrationTest {
     private MockMvc mockMvc;
 
     @Test
-    @Disabled("TODO 1: 完成路由权限后删除此注解")
     void appliesRouteAuthorizationRules() throws Exception {
         mockMvc.perform(get("/api/lesson29/public"))
                 .andExpect(status().isOk());
@@ -42,7 +40,6 @@ class SecurityConfigIntegrationTest {
     }
 
     @Test
-    @Disabled("TODO 2: 完成内存用户后删除此注解")
     void authenticatesConfiguredUsersWithHttpBasic() throws Exception {
         mockMvc.perform(get("/api/lesson29/profile")
                         .with(httpBasic("frontend", "frontend123")))
@@ -60,7 +57,6 @@ class SecurityConfigIntegrationTest {
     }
 
     @Test
-    @Disabled("TODO 3: 完成 CORS 后删除此注解")
     void allowsViteCorsPreflight() throws Exception {
         mockMvc.perform(options("/api/lesson29/profile")
                         .header(HttpHeaders.ORIGIN, "http://localhost:5173")
