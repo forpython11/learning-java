@@ -2,7 +2,7 @@
 
 一个面向前端开发者的 Java 学习项目。课程使用 TypeScript/JavaScript 中熟悉的概念对照 Java，通过小型练习逐步学习语法、面向对象、集合、异常、测试和泛型。
 
-完整的 32 课路线、阶段目标和最终项目见 [`docs/LEARNING-PLAN.md`](docs/LEARNING-PLAN.md)。个人阶段复盘和补缺清单见 [`docs/LEARNING-REVIEW.md`](docs/LEARNING-REVIEW.md)。
+完整的 32 课基础路线和后续针对性训练见 [`docs/LEARNING-PLAN.md`](docs/LEARNING-PLAN.md)。个人阶段复盘和补缺清单见 [`docs/LEARNING-REVIEW.md`](docs/LEARNING-REVIEW.md)。
 
 ## 环境要求
 
@@ -66,6 +66,7 @@ java -cp target/classes org.example.lesson07.Main
 | [Lesson 30](docs/LESSON-30.md) | JWT 鉴权 | 已完成 |
 | [Lesson 31](docs/LESSON-31.md) | OpenAPI 与 Docker | 已完成 |
 | [Lesson 32](docs/LESSON-32.md) | 最终全栈项目 | 已完成 |
+| [Lesson 33](docs/LESSON-33.md) | 订单查询与类型流 | 进行中 |
 
 ## 项目结构
 
@@ -102,7 +103,8 @@ learning-java/
 │   ├── lesson29/                 第二十九课（Security 与 CORS）
 │   ├── lesson30/                 第三十课（JWT 鉴权）
 │   ├── lesson31/                 第三十一课（OpenAPI 与 Docker）
-│   └── lesson32/                 第三十二课（最终订单项目）
+│   ├── lesson32/                 第三十二课（最终订单项目）
+│   └── lesson33/                 第三十三课（订单查询与类型流）
 ├── src/main/resources/           Spring Boot 配置与数据库初始化脚本
 ├── src/test/java/                JUnit 测试代码
 └── pom.xml                       Maven 项目配置
