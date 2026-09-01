@@ -41,8 +41,8 @@ public class JwtSecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.POST, "/api/lesson30/login").permitAll()
-                        // TODO 3: 其他请求必须携带有效 JWT。
-                        .anyRequest().permitAll())
+                        // DONE 3: 其他请求必须携带有效 JWT。
+                        .anyRequest().authenticated())
                 .oauth2ResourceServer(resourceServer -> resourceServer
                         .jwt(Customizer.withDefaults()))
                 .build();

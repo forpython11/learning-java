@@ -31,10 +31,14 @@ public class JwtTokenService {
                 .issuedAt(issuedAt)
                 .claim("scope", scope);
 
-        // TODO 1: 设置 subject 为用户名，并设置 30 分钟后的 expiresAt。
+        // DONE 1: 设置 subject 为用户名，并设置 30 分钟后的 expiresAt。
+        claimsBuilder
+                .subject(authentication.getName())
+                .expiresAt(issuedAt.plusSeconds(1800));
         JwtClaimsSet claims = claimsBuilder.build();
-
-        // TODO 2: 使用 HS256 签名头和 jwtEncoder 编码 claims，返回 token 字符串。
-        return "TODO";
+        JwsHeader jwsHeader=  JwsHeader.with(MacAlgorithm.HS256).build();
+        JwtEncoderParameters parameters = JwtEncoderParameters.from(jwsHeader,claims);
+        // DONE 2: 使用 HS256 签名头和 jwtEncoder 编码 claims，返回 token 字符串。
+        return jwtEncoder.encode(parameters).getTokenValue();
     }
 }

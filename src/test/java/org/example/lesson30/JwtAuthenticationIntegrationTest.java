@@ -1,7 +1,6 @@
 package org.example.lesson30;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -34,7 +33,6 @@ class JwtAuthenticationIntegrationTest {
     private JwtDecoder jwtDecoder;
 
     @Test
-    @Disabled("TODO 1/2: 完成 JWT claims 和编码后删除此注解")
     void loginReturnsJwtWithExpectedClaims() throws Exception {
         String token = loginAndGetToken();
         Jwt jwt = jwtDecoder.decode(token);
@@ -50,7 +48,6 @@ class JwtAuthenticationIntegrationTest {
     }
 
     @Test
-    @Disabled("TODO 3: 完成受保护接口规则后删除此注解")
     void bearerTokenCarriesIdentityToProfile() throws Exception {
         String token = loginAndGetToken();
 
@@ -61,7 +58,6 @@ class JwtAuthenticationIntegrationTest {
     }
 
     @Test
-    @Disabled("TODO 1-3: 完成全部任务后删除此注解")
     void rejectsInvalidCredentialsAndTokens() throws Exception {
         mockMvc.perform(post("/api/lesson30/login")
                         .contentType(MediaType.APPLICATION_JSON)
