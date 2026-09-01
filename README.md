@@ -64,7 +64,8 @@ java -cp target/classes org.example.lesson07.Main
 | [Lesson 28](docs/LESSON-28.md) | 使用 MockMvc 编写 Controller 集成测试 | 已完成 |
 | [Lesson 29](docs/LESSON-29.md) | Spring Security 与 CORS | 已完成 |
 | [Lesson 30](docs/LESSON-30.md) | JWT 鉴权 | 已完成 |
-| [Lesson 31](docs/LESSON-31.md) | OpenAPI 与 Docker | 进行中 |
+| [Lesson 31](docs/LESSON-31.md) | OpenAPI 与 Docker | 已完成 |
+| [Lesson 32](docs/LESSON-32.md) | 最终全栈项目 | 进行中 |
 
 ## 项目结构
 
@@ -100,7 +101,8 @@ learning-java/
 │   ├── lesson28/                 第二十八课（MockMvc 集成测试）
 │   ├── lesson29/                 第二十九课（Security 与 CORS）
 │   ├── lesson30/                 第三十课（JWT 鉴权）
-│   └── lesson31/                 第三十一课（OpenAPI 与 Docker）
+│   ├── lesson31/                 第三十一课（OpenAPI 与 Docker）
+│   └── lesson32/                 第三十二课（最终订单项目）
 ├── src/main/resources/           Spring Boot 配置与数据库初始化脚本
 ├── src/test/java/                JUnit 测试代码
 └── pom.xml                       Maven 项目配置
@@ -142,6 +144,7 @@ learning-java/
 | 前端路由守卫 / CORS 配置 | Spring Security / `SecurityFilterChain` |
 | `localStorage` 中的登录令牌 | JWT / `Authorization: Bearer` |
 | API schema / 前端构建镜像 | OpenAPI / Docker 镜像 |
+| 前端下单完整流程 | JWT + REST + JPA 事务 |
 | Jest / Vitest | JUnit |
 | npm / package.json | Maven / pom.xml |
 

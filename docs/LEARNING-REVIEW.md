@@ -2,9 +2,9 @@
 
 > 复盘日期：2026-09-01
 >
-> 当前进度：已完成 Lesson 01 - Lesson 30，Lesson 31 进行中
+> 当前进度：已完成 Lesson 01 - Lesson 31，Lesson 32 进行中
 >
-> 当前阶段：已经能在分步提示下生成并验证 JWT，开始学习 OpenAPI 文档和 Docker 交付
+> 当前阶段：已经能在分步提示下生成 OpenAPI 文档并完成 Dockerfile，开始最终订单项目
 
 ## 核心结论
 
@@ -42,6 +42,7 @@
 - 已完成三个 MockMvc 集成测试：能准备 H2 数据、断言成功与 404 响应，并在 POST 后再次查询 Repository 核对持久化结果。
 - 已完成 Spring Security 与 CORS 配置：公开、登录用户和管理员接口的状态码均正确，HTTP Basic 用户和浏览器预检也通过测试。
 - 已完成 JWT 签发与 Bearer 鉴权：令牌包含用户名和 30 分钟过期时间，缺失、错误密码和篡改令牌均返回 `401`。
+- 已完成 OpenAPI 与 Docker 练习：接口分组和摘要正确生成，环境变量可覆盖标题，Dockerfile 包含 jar、端口和启动命令。
 - 能完成一对多关系查询：正确使用 `@EntityGraph(attributePaths = "products")`，并把分类及其商品转换成嵌套 DTO。
 - 遇到 `找不到符号 Optional` 时，能够根据提示补充导入并继续完成题目。
 - 会主动询问“为什么这样写”，而不只是要求给出答案。这对形成长期理解比记模板更重要。
@@ -60,6 +61,7 @@
 | 自动化测试 | 正在形成 | 能在提示下完成 Mockito、MockMvc 和安全规则测试，但仍需主动检查断言、状态码和跳过数量 |
 | Spring Security | 入门阶段 | 能在逐行示例后配置访问规则、内存用户和 CORS，对框架提供的类、接口和构建器仍需要先讲解再使用 |
 | JWT | 入门阶段 | 能按类型流完成 claims、签名头、编码参数和令牌字符串，但尚不能独立写出首次接触的框架 API |
+| OpenAPI / Docker | 入门阶段 | 能在逐项提示下完成注解和 Dockerfile，但构建产物、镜像、容器和端口声明仍需要继续用实际流程巩固 |
 | 独立验证 | 需要加强 | 经常写完后询问“现在对了吗”，还未形成固定自测流程 |
 
 ## 最近暴露出的关键卡点
@@ -262,10 +264,20 @@ Spring Boot 项目       在配置中使用 JDBC URL 和同一组账号连接服
 ## Lesson 31 针对性训练
 
 - [ ] 区分 OpenAPI JSON、Swagger UI 和实际 Controller 接口。
-- [ ] 使用 `OpenAPI`、`Info`、`@Tag` 和 `@Operation` 描述接口。
+- [x] 使用 `OpenAPI`、`Info`、`@Tag` 和 `@Operation` 描述接口。
 - [ ] 说出源码、jar、Docker 镜像和运行中容器的先后关系。
-- [ ] 使用环境变量覆盖容器端口和 OpenAPI 标题。
-- [ ] 在删除 `@Disabled` 后主动检查测试的跳过数量。
+- [x] 使用环境变量覆盖容器端口和 OpenAPI 标题。
+- [x] 删除全部 `@Disabled` 并确认 `Skipped: 0`。
+
+本课最终接口文档、环境变量和 Dockerfile 行为正确。过程中曾只添加 `@Tag` 而漏掉方法上的 `@Operation`，并对连续 `assertTrue` 每次暴露下一个缺失项感到困惑；还曾把标题写死，使测试通过但环境变量不生效。说明已经能按提示完成声明式配置，但仍需形成“测试通过后再验证真实配置分支”的习惯。`COPY`、`ENV`、`EXPOSE` 和 `ENTRYPOINT` 的职责已分别讲解，概念能否独立复述仍待最终项目后的回顾。
+
+## Lesson 32 针对性训练
+
+- [ ] 使用 `Optional.orElseThrow()` 把缺失商品转换为明确业务异常。
+- [ ] 在任何写操作之前完成库存校验。
+- [ ] 沿着 `CreateOrderRequest -> ProductEntity -> PurchaseOrderEntity -> OrderResponse` 说明类型变化。
+- [ ] 解释 `@Transactional` 如何让扣库存和保存订单保持一致。
+- [ ] 完成公开商品、JWT 登录和 Bearer 下单的完整请求流程。
 
 ## 建议的复习方式
 
@@ -284,7 +296,7 @@ Spring Boot 项目       在配置中使用 JDBC URL 和同一组账号连接服
 
 ## 下一阶段目标
 
-完成 Lesson 31 后，应达到：
+完成 Lesson 32 后，应达到：
 
 - 能独立区分 `Optional<T>`、`List<T>` 和 `Page<T>`。
 - 能沿着 `Controller -> Repository -> Entity -> DTO -> JSON` 说明类型变化。
@@ -299,6 +311,7 @@ Spring Boot 项目       在配置中使用 JDBC URL 和同一组账号连接服
 - 能说明服务端如何验证 JWT 签名和过期时间，以及篡改令牌为什么会被拒绝。
 - 能生成可供前端查看的 OpenAPI JSON，并为接口补充清楚的分组和摘要。
 - 能把 Spring Boot jar 构建成 Docker 镜像，并使用环境变量配置容器。
+- 能把登录、安全、数据库、事务、异常和集成测试组合成一个可供前端调用的完整功能。
 - 能区分 Java 编译问题、Spring 接口问题和数据库服务连接问题。
 
-达到这些标准后，再进入最终全栈项目，把前面学过的接口、数据库、测试、安全和交付串成完整流程。
+达到这些标准后，这套 32 课课程完成；后续应通过独立项目和针对性复习巩固，而不是继续堆叠新框架。

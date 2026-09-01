@@ -1,6 +1,6 @@
 # Lesson 31: OpenAPI 与 Docker
 
-> 状态：进行中
+> 状态：已完成（2026-09-01）
 
 上一课解决了“谁能访问接口”，本课解决“前端怎样读懂接口”和“应用怎样在一致环境中启动”。你会让 Spring 根据 Controller 生成 OpenAPI JSON，再把打包后的 jar 放进 Docker 镜像。
 

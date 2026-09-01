@@ -18,7 +18,10 @@ public class OpenApiConfig {
 
     @Bean
     OpenAPI learningJavaOpenApi() {
-        // TODO 1: 设置文档 title、version 和 description。
-        return new OpenAPI();
+        // DONE 1: 设置文档 title、version 和 description。
+        Info info = new Info().title(displayName)
+                .version("1.0")
+                .description("Product catalog API for frontend integration");
+        return new OpenAPI().info(info);
     }
 }

@@ -1,6 +1,6 @@
 package org.example.lesson31;
 
-import org.junit.jupiter.api.Disabled;
+import io.swagger.v3.oas.models.OpenAPI;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,6 +10,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -22,7 +23,6 @@ class OpenApiAndDockerIntegrationTest {
     private MockMvc mockMvc;
 
     @Test
-    @Disabled("TODO 1: 完成 OpenAPI 基本信息后删除此注解")
     void publishesApiInformation() throws Exception {
         mockMvc.perform(get("/v3/api-docs"))
                 .andExpect(status().isOk())
@@ -30,10 +30,13 @@ class OpenApiAndDockerIntegrationTest {
                 .andExpect(jsonPath("$.info.version").value("1.0"))
                 .andExpect(jsonPath("$.info.description")
                         .value("Product catalog API for frontend integration"));
+
+        OpenAPI customOpenApi = new OpenApiConfig("My-Catalog")
+                .learningJavaOpenApi();
+        assertEquals("My-Catalog", customOpenApi.getInfo().getTitle());
     }
 
     @Test
-    @Disabled("TODO 2: 完成 Controller 文档注解后删除此注解")
     void documentsCatalogEndpoint() throws Exception {
         mockMvc.perform(get("/v3/api-docs"))
                 .andExpect(status().isOk())
@@ -44,7 +47,6 @@ class OpenApiAndDockerIntegrationTest {
     }
 
     @Test
-    @Disabled("TODO 3: 完成 Dockerfile 后删除此注解")
     void dockerfileRunsPackagedApplication() throws Exception {
         String dockerfile = Files.readString(Path.of("Dockerfile"));
 
@@ -56,6 +58,7 @@ class OpenApiAndDockerIntegrationTest {
         assertTrue(dockerfile.contains(
                 "ENV APP_DISPLAY_NAME=Learning-Java-Container"
         ));
+        assertTrue(dockerfile.contains("EXPOSE 8080"));
         assertTrue(dockerfile.contains(
                 "ENTRYPOINT [\"java\", \"-jar\", \"app.jar\"]"
         ));
